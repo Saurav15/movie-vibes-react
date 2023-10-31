@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./common/Header";
 
@@ -6,7 +6,9 @@ function Body() {
   return (
     <>
       <Header />
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 }

@@ -1,10 +1,13 @@
+import { lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Body, LoginSignUp, ProtectedRoute } from "./components/index";
-import BrowsePage from './pages/BrowsePage'
-import "./config/firebase";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import MovieCatalogPage from "./pages/MovieCatalogPage";
+import "./config/firebase";
+import Body from "./components/Body";
+import LoginSignUp from "./components/auth/LoginSignUp";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+const BrowsePage = lazy(() => import("./pages/BrowsePage"));
+const MovieCatalogPage = lazy(() => import("./pages/MovieCatalogPage"));
 
 function App() {
   const router = createBrowserRouter([
@@ -17,7 +20,7 @@ function App() {
           element: <LoginSignUp />,
         },
         {
-          path: '/signup',
+          path: "/signup",
           element: <LoginSignUp />,
         },
         {
@@ -25,14 +28,14 @@ function App() {
           element: <ProtectedRoute />,
           children: [
             {
-              path: '/browse',
-              element: <BrowsePage />
+              path: "/browse",
+              element: <BrowsePage />,
             },
             {
-              path: '/movies/:type',
+              path: "/movies/:type",
               element: <MovieCatalogPage />,
-            }
-          ]
+            },
+          ],
         },
       ],
     },

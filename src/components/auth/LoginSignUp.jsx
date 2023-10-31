@@ -9,6 +9,7 @@ import { signUpUsingFirebase } from "../../utils/auth/signUpUsingFirebase";
 import { signInUsingFirebase } from "../../utils/auth/signInUsingFirebase";
 import { addUser } from "../../redux/userSlice";
 import { useIsAuthenticated } from "../../hooks/isAuthenticatedHook";
+import netflixBgImage from '../../assets/Netflix_bg_50.jpg'
 
 /**
  * `LoginSignUp` is a React component responsible for rendering a sign-up or sign-in form.
@@ -127,8 +128,9 @@ function LoginSignUp() {
     <>
       <div className="relative z-0 w-screen h-screen overflow-hidden">
         <img
-          className="object-cover "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          className="object-cover w-full h-full"
+          // src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={netflixBgImage}
           alt="Background"
         ></img>
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -184,7 +186,6 @@ function LoginSignUp() {
           />
           {errorMessage?.somethingWentWrong && (
             <p className="text-yellow-700 mt-3 text-sm ">
-              {console.log("Inside errror message: ", errorMessage)}
               {"*" + errorMessage.somethingWentWrong}
             </p>
           )}

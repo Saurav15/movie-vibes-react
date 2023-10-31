@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_ACCESS_TOKEN } from "./constants";
+import { CONSTANTS } from "./constants";
 
 // Create an instance of Axios with default configurations
 const instance = axios.create({
@@ -7,7 +7,7 @@ const instance = axios.create({
   timeout: 5000, 
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${API_ACCESS_TOKEN}`
+    'Authorization': `Bearer ${CONSTANTS.API_ACCESS_TOKEN}`
   },
 });
 

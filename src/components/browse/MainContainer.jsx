@@ -1,11 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import MainContainerShimmer from "./shimmer/MainContainerShimmer";
 
+/**
+ * A component representing the main container for displaying movie details.
+ * @returns {JSX.Element} JSX element for rendering the main container.
+ */
 function MainContainer() {
-    const mainMovie = useSelector(state => state.movies.mainMovie)
-    if(!mainMovie) return;
+  const mainMovie = useSelector((state) => state.movies.mainMovie);
 
-    const {original_title,overview,video} = mainMovie;
+  // If mainMovie is not available, display a shimmer effect.
+  if (!mainMovie) return <MainContainerShimmer />;
+
+  const { original_title, overview, video } = mainMovie;
 
   return (
     <>
@@ -20,9 +27,7 @@ function MainContainer() {
       <div className="relative w-full aspect-video bg-gradient-to-r from-black">
         <div className="pt-[20%] ml-20">
           <h1 className="text-4xl text-white font-bold">{original_title}</h1>
-          <p className="text-white w-5/12 mt-3">
-            {overview}
-          </p>
+          <p className="text-white w-5/12 mt-3">{overview}</p>
           <div className="mt-4 flex">
             <button className="bg-white text-black w-36 px-8 py-2 rounded-lg flex items-center justify-center">
               <svg

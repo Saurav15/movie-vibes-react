@@ -1,12 +1,24 @@
-
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import MovieCard from "../common/MovieCard";
 
+/**
+ * A component to display a carousel of movies.
+ *
+ * @param {Object} props - Component props.
+ * @param {string} props.listType - The type of movie list.
+ * @param {Array} props.movies - An array of movie data.
+ * @returns {JSX.Element} JSX element for rendering a movie carousel.
+ */
 function MovieCarousel({ listType, movies }) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
+  /**
+   * Handle the click event when the movie list title is clicked.
+   * Navigates to the corresponding movie list page.
+   */
   const handleMovieListClick = () => {
-    navigate(`/movies/${listType}`)  
+    navigate(`/movies/${listType}`);
   };
 
   return (
@@ -17,7 +29,7 @@ function MovieCarousel({ listType, movies }) {
             className="text-white ml-1 mb-4 text-2xl hover:cursor-pointer hover:-translate-y-[2px]"
             onClick={handleMovieListClick}
           >
-            {listType} 
+            {listType}
           </h2>
         </div>
 
