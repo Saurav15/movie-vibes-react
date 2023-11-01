@@ -2,19 +2,20 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import { CONFIG } from "./config";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBXr2G3ZVqi4ZEVeHdxd_4SPBpe6s-QFA0",
-  authDomain: "movie-vibes-95b3f.firebaseapp.com",
-  projectId: "movie-vibes-95b3f",
-  storageBucket: "movie-vibes-95b3f.appspot.com",
-  messagingSenderId: "957365774925",
-  appId: "1:957365774925:web:31e55e262cae6b98b8ca04",
-  measurementId: "G-SCEQ1GKXY5",
+  apiKey: CONFIG.FIREBASE_API_KEY,
+  authDomain: CONFIG.FIREBASE_AUTH_DOMAIN,
+  projectId: CONFIG.FIREBASE_PROJECTID,
+  storageBucket: CONFIG.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: CONFIG.FIREBASE_MESSAGINGSENDERID,
+  appId: CONFIG.FIREBASE_APP_ID,
+  measurementId: CONFIG.FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

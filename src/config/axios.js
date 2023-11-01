@@ -1,13 +1,13 @@
 import axios from "axios";
-import { CONSTANTS } from "./constants";
+import { CONFIG } from "./config";
 
 // Create an instance of Axios with default configurations
 const instance = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
+  baseURL: CONFIG.TMDB_BASE_URL,
   timeout: 5000, 
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${CONSTANTS.API_ACCESS_TOKEN}`
+    'Authorization': `Bearer ${CONFIG.TMDB_API_ACCESS_TOKEN}`
   },
 });
 

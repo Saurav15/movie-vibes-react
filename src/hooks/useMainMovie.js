@@ -41,7 +41,7 @@ const getMainMovie = async () => {
 
     // Select the video to play
     const videoToPlay =
-      mainMovieVideos.find((video) => video.type === CONSTANTS.trailer) ||
+      mainMovieVideos.find((video) => video.type === CONSTANTS.TRAILER) ||
       mainMovieVideos[0];
 
     // Combine the main movie metadata with the video data
